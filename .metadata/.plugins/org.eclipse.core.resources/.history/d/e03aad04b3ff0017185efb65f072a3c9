@@ -1,0 +1,14 @@
+package org.manav.javabrains.dao;
+
+import org.manav.javabrains.model.Circle;
+
+public class JdbcDaoImpl {
+
+	public Circle getCircleName(int circleId)  {
+		
+		Connection conn = null;
+		
+		String driver="org.apache.derby.jdbc.ClientDriver";
+		
+	}
+}

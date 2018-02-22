@@ -1,0 +1,38 @@
+package org.manav.javabrains;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.derby.impl.sql.catalog.SYSROUTINEPERMSRowFactory;
+import org.manav.javabrains.dao.JdbcDaoImpl;
+import org.manav.javabrains.model.Circle;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class JdbcDemo {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+		JdbcDaoImpl dao = (JdbcDaoImpl) ctx.getBean("jdbcDaoImpl");
+				
+		//Circle circle = dao.getCircleName(1);
+		//System.out.println(circle.getName());
+		
+		//System.out.println(dao.getCircleCount());
+
+		//System.out.println(dao.getCircleNameJdbc(1));
+		
+//		Circle circle=dao.getCircleObject(1);
+//		System.out.println(circle.getId());
+//		System.out.println(circle.getName());
+		
+		List<Circle> circleList = new ArrayList<Circle>();
+		
+		
+	}
+	
+
+}

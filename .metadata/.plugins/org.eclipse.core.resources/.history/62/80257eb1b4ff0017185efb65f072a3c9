@@ -1,0 +1,15 @@
+package org.manav.javabrains;
+
+import org.manav.javabrains.dao.JdbcDaoImpl;
+import org.manav.javabrains.model.Circle;
+
+public class JdbcDemo {
+
+	public static void main(String[] args) {
+		
+		
+		Circle circle = new JdbcDaoImpl().getCircleName(1);
+
+	}
+
+}

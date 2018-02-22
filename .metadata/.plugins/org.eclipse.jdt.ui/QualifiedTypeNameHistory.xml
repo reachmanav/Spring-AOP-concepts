@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.manav.javabrains.service.ShapeService"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Pointcut"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.JoinPoint"/>
+<fullyQualifiedTypeName name="org.manav.javbrains.model.Circle"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.annotation.AfterThrowing"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.annotation.AfterReturning"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.annotation.Around"/>
+<fullyQualifiedTypeName name="org.aspectj.lang.ProceedingJoinPoint"/>
+<fullyQualifiedTypeName name="org.manav.javabrains.aspect.Loggable"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.JdbcTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
+<fullyQualifiedTypeName name="org.apache.derby.impl.sql.catalog.SYSROUTINEPERMSRowFactory"/>
+<fullyQualifiedTypeName name="org.manav.javabrains.dao.JdbcDaoImpl.MyRowMapper"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.SqlParameterSource"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.namedparam.MapSqlParameterSource"/>
+<fullyQualifiedTypeName name="org.manav.javabrains.model.Circle"/>
+<fullyQualifiedTypeName name="org.manav.javabrains.dao.MyJdbcDaoImpl"/>
+</qualifiedTypeNameHistroy>

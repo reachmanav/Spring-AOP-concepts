@@ -1,0 +1,23 @@
+package org.manav.javabrains;
+
+import org.manav.javabrains.dao.JdbcDaoImpl;
+import org.manav.javabrains.model.Circle;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+
+public class JdbcDemo {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+		JdbcDaoImpl dao = (JdbcDaoImpl) ctx.getBean("jdbcDaoImpl");
+				
+		//Circle circle = dao.getCircleName(1);
+		//System.out.println(circle.getName());
+		
+		System.out.println(dao.getCircleCount());
+
+	}
+
+}

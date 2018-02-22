@@ -1,0 +1,127 @@
+package org.manav.javabrains.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.apache.derby.impl.sql.catalog.SYSROUTINEPERMSRowFactory;
+import org.manav.javabrains.model.Circle;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JdbcDaoImpl {
+	
+	
+	private DataSource dataSource;
+
+	private JdbcTemplate jdbcTemplate = null;
+	
+	private RowMapper<Circle> rowMapper = null;
+	
+	public class MyRowMapper implements RowMapper<Circle>  {
+
+		@Override
+		public Circle mapRow(ResultSet resultSet, int arg1) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
+	
+	public RowMapper<Circle> getRowMapper() {
+		return rowMapper;
+	}
+
+	public void setRowMapper(RowMapper<Circle> rowMapper) {
+		this.rowMapper = rowMapper;
+	}
+
+	public DataSource getDataSource() {
+		return dataSource;
+	}
+
+	@Autowired
+	public void setDataSource(DataSource dataSource) {
+		//this.dataSource = dataSource;
+		System.out.println("Inside setDataSource");
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
+	}
+	
+	public int getCircleCount()  {
+		String sql = "select count(*) from circle";
+		//jdbcTemplate.setDataSource(getDataSource());
+		return jdbcTemplate.queryForObject(sql, Integer.class);
+	}
+	
+	public String getCircleNameJdbc(int circleId)  {
+		String sql = "select name from circle where id=?";
+		return jdbcTemplate.queryForObject(sql, new Object[] {circleId}, String.class);
+	}
+	
+	public Circle getCircleObject(int circleId)  {
+		String sql = "select * from circle where id=?";
+		return jdbcTemplate.queryForObject(sql, new Object[] {circleId},);
+	}
+
+	public Circle getCircleName(int circleId)  {
+		
+		Connection conn = null;
+		
+		//String driver="org.apache.derby.jdbc.ClientDriver";
+		
+		try {
+//		Class.forName(driver).newInstance();
+//		conn = DriverManager.getConnection("jdbc:derby://localhost:1527/db");
+		
+		conn = dataSource.getConnection();
+		
+		PreparedStatement ps = conn.prepareStatement("select * from circle where id=?");
+		ps.setInt(1, circleId);
+		
+		Circle circle=null;
+		
+		ResultSet rs = ps.executeQuery();
+		
+		if (rs.next())  {
+			circle = new Circle(circleId, rs.getString("name"));
+		}
+		
+		
+		rs.close();
+		ps.close();
+		
+		return circle;
+		
+		} catch (Exception ex)  {
+			throw new RuntimeException(ex);
+		}  finally {
+			try {
+			conn.close();
+			} catch (SQLException sqlEx)  {
+							}
+		}
+		
+		
+	}
+
+	/**
+	 * @return the jdbcTemplate
+	 */
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+
+	/**
+	 * @param jdbcTemplate the jdbcTemplate to set
+	 */
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+}

@@ -1,0 +1,26 @@
+package org.manav.javabrains.aspect;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+
+@Aspect
+public class LoggingAspect {
+
+	//@Before("execution(public String org.manav.javbrains.model.Circle.getName())")
+	
+	@Before("execution(* get ())")
+	public void LoggingAdvice()  {
+		System.out.println("Aspect method LoggingAdvice() called. ");
+	}
+	
+	@Before("execution(* get ())")
+	public void SecondLoggingAdvice()  {
+		System.out.println("Aspect method SecondLoggingAdvice() called. ");
+	}
+	
+	
+	@Pointcut("execution(* get ())")
+	public void allGetters() {}
+	
+}

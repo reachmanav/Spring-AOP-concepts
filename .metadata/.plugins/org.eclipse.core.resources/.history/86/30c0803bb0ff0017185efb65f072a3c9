@@ -1,0 +1,9 @@
+package org.manav.javabrains.model;
+
+public class Circle {
+
+	private int id; 
+	private String name; 
+	
+	
+}
